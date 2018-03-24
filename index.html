@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Get to the Train on Time</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap 4.0 Link -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- locla style.css -->
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" />
+        <!-- jquery.js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- firebase script -->
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+       
+    </head>
+    <body>
+        <div class="container">            
+            <header>
+                <div class="row">
+                    <div class="col-lg">
+                        <img src="assets/images/trainwreck.jpg" width="100%" height=350px>
+                    </div>
+                </div>
+            </header>
+            <div class="container-fluid trains">
+                <div class="row">
+                    <div class="col-lg">
+                        <div class="card">
+                            <h4 class="card-header">Current Train Schedule</h4>
+                            <div class="card-body">
+                                <table class="table" id="train-Table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Train Name</th>
+                                            <th scope="col">Destination</th>
+                                            <th scope="col">Frequency (min)</th>
+                                            <th scope="col">Next Arrival</th>
+                                            <th scope="col">Minutes Away</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="train_info">
+                                        <!-- this is an example -->
+                                        <!-- this will have to be dynamically created from form entry data -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="row"><br></div>               
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg">
+                        <div class="card">
+                            <h4 class="card-header">Enter Information on a new Train/Add a Train</h4>
+                            <div class="card-body">
+                                <form id="add_train">
+                                    <div class="form-group">
+                                        <label for="addTrainName">Train Name</label>
+                                        <div>
+                                            <input type="Text" placeholder="Train Name" id="addTrainName">
+                                        </div>                                                           
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addDestination">Destination</label>                                   <div>
+                                            <input type="Text" placeholder="where is this train going" id="addDestination">
+                                        </div>                                             
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="firstTrainTime">First Train Arrives</label>
+                                        <div>
+                                            <input type="time" id="firstTrainTime">
+                                        </div>
+
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addFrequency">Frequency in (min)</label>
+                                        <div>
+                                            <input type="Text" placeholder="time between trains" id="addFrequency">
+                                        </div>                                
+                                            
+                                    </div>
+                                    <button id="add-train" class="btn btn-primary" data-toggle="modal" data-target="#trainAddSuccess">Submit</button>            
+                                </form>
+                                <!-- Modal -->
+                                <div id="trainAddSuccess" class="modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title">Success</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <p>Success! You added a train.</p>
+                                            </div>
+                                            <div class="modal-footer">                                        
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                               
+            </div>            
+        </div>
+        <script src="assets/train.js"></script>      
+    </body>
+</html>
