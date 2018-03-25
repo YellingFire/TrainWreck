@@ -15,21 +15,6 @@ firebase.initializeApp(config);
 //creating a reference to the database  
 var database = firebase.database();
 
-// database.ref().on("child_added", function setData(snapshot) {
-
-//   var trainName = snapshot.val().name;
-//   var destination = snapshot.val().destination;
-//   var frequency = snapshot.val().frequency;
-//   var min_away = snapshot.val().min_away;
-//   var next_arrival = snapshot.val().next_arrival;
-
-//   $("#train_info").append("<tr><td>" + trainName + "<td>" + destination + "<td>" +
-// frequency + "<td>" + next_arrival + "<td>" + min_away + "</tr>");
-
-// });
-
-// setData();
-
 
 //set global variables
 var trainName;
@@ -93,6 +78,9 @@ $("#add-train").on("click", function(event) {
 }
 resetTrainAdd();
 
+
+})
+
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   // console.log(childSnapshot.val());
@@ -109,20 +97,11 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   // console.log(min_away);
   // console.log(next_arrival);
 
-  $("#train_info").empty();
+  
   $("#train_info").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
   frequency + "</td><td>" + next_arrival + "</td><td>" + min_away + "</td></tr>");
 
 });
-
-
-
-
-
-// $("#train-Table tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
-// frequency + "</td><td>" + next_arrival + "</td><td>" + min_away + "</td></tr>");
-
-})
 
 // function(errorObject) {
 //   console.log("Errors handled: " + errorObject.code);

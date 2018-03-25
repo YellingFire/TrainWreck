@@ -23,7 +23,7 @@
             <header>
                 <div class="row">
                     <div class="col-lg">
-                        <img src="assets/images/trainwreck.jpg" width="100%" height=350px>
+                        <img src="assets/images/FamousTrains.jpg" width="100%" height=350px>
                     </div>
                 </div>
             </header>
@@ -44,7 +44,6 @@
                                         </tr>
                                     </thead>
                                     <tbody id="train_info">
-                                        <!-- this is an example -->
                                         <!-- this will have to be dynamically created from form entry data -->
                                     </tbody>
                                 </table>
@@ -76,38 +75,36 @@
                                         <label for="firstTrainTime">First Train Arrives</label>
                                         <div>
                                             <input type="time" id="firstTrainTime">
-                                        </div>
-
-                                        
+                                        </div>                                        
                                     </div>
                                     <div class="form-group">
                                         <label for="addFrequency">Frequency in (min)</label>
                                         <div>
                                             <input type="Text" placeholder="time between trains" id="addFrequency">
-                                        </div>                                
-                                            
+                                        </div>                                           
                                     </div>
+                                    <!-- form submit button -->
                                     <button id="add-train" class="btn btn-primary" data-toggle="modal" data-target="#trainAddSuccess">Submit</button>            
                                 </form>
-                                <!-- Modal -->
-                                <div id="trainAddSuccess" class="modal" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                          <div class="modal-content">
+                                <!-- Modal to handle notification of success -->
+                                <div id="trainAddSuccess" class="modal" tabindex="-1" role="dialog" aria-labelledby="TrainAddLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
                                             <div class="modal-header">
-                                              <h5 class="modal-title">Success</h5>
-                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <h5 class="modal-title" id="TrainAddLabel">Success</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
-                                              </button>
+                                                </button>
                                             </div>
                                             <div class="modal-body">
-                                              <p>Success! You added a train.</p>
+                                                <p>Success! You added a train.</p>
                                             </div>
                                             <div class="modal-footer">                                        
-                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             </div>
-                                          </div>
                                         </div>
-                                      </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
